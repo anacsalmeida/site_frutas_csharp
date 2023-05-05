@@ -1,0 +1,28 @@
+﻿@model List<FrutasModel>
+
+<section class="section-selecionada ">
+    <div class="container col-12 col-md-12 col-lg-12">
+        <div class="row">
+            @foreach (FrutasModel fruta in Model)
+            {
+                <div class="modal-dialog d-flex justify-content-center align-items-center">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">@fruta.Nome</h4>
+                        </div>
+                        <div class="modal-body frutas-body">
+                            <img src=@fruta.IdUrl alt="">
+                            <p>@fruta.Descricao</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="section-button" asp-controller="Frutas" asp-action="Editar" asp-route-id="@fruta.Id">Editar</a>
+                            <a class="section-button" asp-controller="Frutas" asp-action="Deletar" asp-route-id="@fruta.Id">Deletar</a>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+    </div>
+</section>

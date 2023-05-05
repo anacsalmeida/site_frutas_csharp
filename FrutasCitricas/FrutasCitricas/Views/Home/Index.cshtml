@@ -1,0 +1,35 @@
+﻿@model FrutasModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<article>
+    <div class="d-flex align-items-center">
+        <div class="container container-config col-10 col-md-10 col-lg-10">
+            <div class="formulario-config row">
+                <div class="form-img  col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <img class="" src="~/img/frutas.png" alt="" />
+                </div>
+                <div class="form-inputs col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <form asp-controller="Home" asp-action="Criar" method="post" class="row" enctype="multipart/form-data">
+                        <h1 class="col-12">Registrar Fruta</h1>
+                        <div class="col-xs-12 col-12 d-flex justify-content-center">
+                            <label class="input-image" for="inputFileToLoad">
+                                +
+                                <input type="file" name="File" id="inputFileToLoad">
+                            </label>
+                        </div>
+                        <div class="col-xs-12 col-12 d-flex flex-column">
+                            <input asp-for="Nome" type="text" class="p-2 padrao-input" placeholder="Nome" requide>
+                            <span asp-validation-for="Descricao" class="text-danger"></span>
+                            <input asp-for="Descricao" type="text" class="p-2 padrao-input" placeholder="Descrição" requide>
+                            <span asp-validation-for="Descricao" class="text-danger"></span>
+                            <button id="" type="submit" class="form-button">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>

@@ -1,0 +1,54 @@
+﻿@model List<FrutasModel>
+
+<article>
+    <div class="d-flex align-items-center">
+        <div class="container container-config col-9 col-md-9 col-lg-9">
+            <div class="container-privacy-config row">
+                <div class="privacy-div-esquerda col-5 col-md-5 col-lg-5">
+                    <h1>Importância das frutas citricas</h1>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid saepe vero
+                        cumque. Natus labore officiis consectetur, alias vitae, reprehenderit ab soluta
+                        laboriosam nulla hic quibusdam consequatur itaque inventore odio expedita?
+                    </p>
+                    <button class="form-button ">Ler mais...</button>
+                </div>
+                <div class="privacy-div-direita col-7 col-md-7 col-lg-7">
+                    <div class="div-direita">
+                        <img src="~/img/abacaxi.png" alt="">
+                    </div>
+                    <div class="d-flex">
+                        <div class="div-direita-padrao">
+                            <img src="~/img/morango.png" alt="">
+                        </div>
+                        <div class="div-direita-padrao">
+                            <img src="~/img/limao.png" alt="">
+                        </div>
+                        <div class="div-direita-padrao">
+                            <img src="~/img/acerola.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<section class="section-buscar">
+    <div class="d-flex align-items-center">
+        <div class="container">
+            <h1 class="d-flex justify-content-center">Catálogo</h1>
+            <div class="container-frutas row col-md-12 col-12 col-lg-12">
+                @foreach (FrutasModel fruta in Model)
+                {
+                    <div class="container">
+                        <img src=@fruta.IdUrl alt="">
+                        <p>@fruta.Nome</p>
+                        <a class="section-button" asp-controller="Frutas" asp-action="Selecionar" asp-route-id="@fruta.Id">Ler mais...</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
